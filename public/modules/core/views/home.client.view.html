@@ -1,5 +1,5 @@
 <section data-ng-controller="HomeController">
-    <div id="center-wrapper">
+    <div id="container-fluid" style="max-width: 100%"> <!--center-wrapper-->
         <div class="dhe-example-section" id="ex-1-4">
             <div class="dhe-example-section-header">
                 <h3 class="dhe-h3 dhe-example-title">Continuous Integration</h3>
@@ -16,19 +16,34 @@
                     <!--</div>-->
                 <!--</div>-->
             <!--</div>-->
-            <div class="column left first" style="width:{{columnWidth}}%;height: 100%" ng-repeat="column in columns" data-columnindex="{{$index}}" id="column{{$index}}">
+            <div class="column left first" style="width:{{columnWidth}}%; display: inline-block ;height: 100%" ng-repeat="column in columns" data-columnindex="{{$index}}" id="column{{$index}}">
                 <!--<div class="column left">-->
-                    <div class="columnHeader">
-                        <a title="Column settings" ng-model="column"><i class="glyphicon glyphicon-wrench"></i></a>
-                        <a title="Add card to column" class="addCard pull-right" ng-click="addCard(column)"><i class="glyphicon glyphicon-plus"></i></a>
-                        <span>{{column.name}}</span>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="columnHeader">
+                            <a title="Column settings" ng-model="column"><i class="glyphicon glyphicon-wrench"></i></a>
+                            <a title="Add card to column" class="addCard pull-right" ng-click="addCard(column)"><i class="glyphicon glyphicon-plus"></i></a>
+                            <span>{{column.name}}</span>
+                        </div>
+                        <div class="panel-body">
+                            <div class="well">
+                                <ul data-as-sortable="dragControlListeners" ng-model="column.cards" class="sortable-list">
+                                    <li class="sortable-item" ng-repeat="card in column.cards" data-ng-show="card.title" data-as-sortable-item="">
+                                        <div data-as-sortable-item-handle="">
+                                            <div class="caption">
+                                                <h4>{{card.title}}</h4>
+                                                <p>Nullam Condimentum Nibh Etiam Sem</p>
+                                                <a class="btn btn-mini" href="#">» Read More</a>
+                                            </div>
+                                        </div>
+                                        <!--<a class="deleteCard pull-right"><i class="glyphicon glyphicon-remove"></i></a>-->
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <ul data-as-sortable="dragControlListeners" ng-model="column.cards" class="sortable-list">
-                        <li class="sortable-item" ng-repeat="card in column.cards" data-ng-show="card.title" data-as-sortable-item="">
-                            <div data-as-sortable-item-handle="">{{card.title}}</div>
-                            <!--<a class="deleteCard pull-right"><i class="glyphicon glyphicon-remove"></i></a>-->
-                        </li>
-                    </ul>
+
+                </div>
                 <!--</div>-->
             </div>
 

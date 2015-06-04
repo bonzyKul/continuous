@@ -54,8 +54,30 @@
     width: 100%;
 }
 
+.caption h4 {
+
+    color: #444;
+}
+.caption p {
+
+    color: #999;
+}
+.btn.btn-mini {
+
+}
 
 /* Columns */
+
+.well {
+    width: 100%;
+    margin-top: 15px;
+    padding: 0;
+}
+
+.panel-body {
+    padding: 0;
+}
+
 
 .column {
     background-color: antiquewhite;
@@ -63,6 +85,7 @@
     margin-left: 2px;
     width: 20%;
 }
+
 .column.first {margin-left: 0;background-color: antiquewhite;}
 
 .columnHeader {
@@ -70,6 +93,7 @@
     font-size: 16px;
     margin-top: 5px;
     font-weight: bold;
+
 }
 
 .glyphicon-wrench {
@@ -95,18 +119,18 @@
 .sortable-list {
     background-color: #F93;
     list-style: none;
-    margin-top: 10px;
+    margin-top: 0;
     min-height: 60px;
-    padding: 10px;
+    padding: 5px;
+    width: 100%;
 }
 .sortable-item {
     background-color: #FFF;
     border: 1px solid #000;
     cursor: move;
     display: block;
-    font-weight: bold;
     margin-bottom: 5px;
-    padding: 20px 0;
+    padding: 5px 0;
     text-align: center;
 }
 
