@@ -10,8 +10,14 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
             return Math.floor((100 / 5) * 100) / 100;
         };
 
+        $scope.toggleMenu = function(e) {
+            //e.preventDefault();
+            $('#wrapper').toggleClass('active');
+        };
+
         $scope.initFunc = function() {
             console.log('init function called');
+
             var panelCol = $('.panel-body');
             panelCol.css('max-height', (window.innerHeight - 300) + 'px');
 
