@@ -10,8 +10,19 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
             return Math.floor((100 / 5) * 100) / 100;
         };
 
+        $scope.initFunc = function() {
+            console.log('init function called');
+            var panelCol = $('.panel-body');
+            panelCol.css('max-height', (window.innerHeight - 300) + 'px');
 
+           panelCol.hover(function(){
+                $(this).find('.panel-footer').slideDown(250);
+            },function(){
+                $(this).find('.panel-footer').slideUp(250); //.fadeOut(205)
+            });
+        }
 
+        $scope.release = "1506";
 
         $scope.columns = [
             {'name': 'Backlog',cards: [{'title': 'item1', 'drag':true},
@@ -54,8 +65,9 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
         };
 
         $scope.dragControlListeners = {
-            itemMoved: function (event) {console.log(event.source.itemScope.modelValue.title);
-
+            itemMoved: function (event) {
+                console.log(event.source.itemScope.modelValue.title);
+                $scope.release = prompt('Enter Release Info !');
             }
         };
 	}

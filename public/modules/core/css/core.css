@@ -76,14 +76,18 @@
 
 .panel-body {
     padding: 0;
+    overflow-y: auto;
 }
 
 
 .column {
     background-color: antiquewhite;
     border: 1px solid #000;
-    margin-left: 2px;
+    margin-left: 0;
+    margin-top: 25px;
     width: 20%;
+    max-height: 80%;
+    float: left;
 }
 
 .column.first {margin-left: 0;background-color: antiquewhite;}
@@ -91,9 +95,8 @@
 .columnHeader {
     text-align: center;
     font-size: 16px;
-    margin-top: 5px;
+    margin-top: 0;
     font-weight: bold;
-
 }
 
 .glyphicon-wrench {
@@ -114,10 +117,41 @@
     align-content: center;
 }
 
+.shape {
+    border-style: solid;
+    border-width: 0 70px 40px 0;
+    border-color: rgba(255,255,255,0) #d9534f rgba(255,255,255,0) rgba(255,255,255,0);
+    float: right;
+    height: 0;
+    width: 0;
+    padding: 0;
+    margin-top: -15px;
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
+.shape-text {
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    position: relative;
+    right: -40px;
+    top: 5px;
+    white-space: nowrap;
+    -ms-transform: rotate(30deg);
+    -o-transform: rotate(360deg);
+    -webkit-transform: rotate(30deg);
+    transform: rotate(30deg);
+}
+
+
 /* Sortable items */
 
 .sortable-list {
     background-color: #F93;
+    box-shadow: 0 10px 20px 0 rgba(0,0,0,0.2), 0 10px 20px 0 rgba(0,0,0,0.2);
     list-style: none;
     margin-top: 0;
     min-height: 60px;
@@ -127,11 +161,14 @@
 .sortable-item {
     background-color: #FFF;
     border: 1px solid #000;
+    border-radius: 5px;
+    box-shadow: 0 10px 20px 0 rgba(0,0,0,0.2), 0 10px 20px 0 rgba(0,0,0,0.2);
     cursor: move;
     display: block;
     margin-bottom: 5px;
-    padding: 5px 0;
+    padding: 0;
     text-align: center;
+    overflow: hidden;
 }
 
 /* Containment area */

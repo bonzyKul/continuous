@@ -1,63 +1,37 @@
-<section data-ng-controller="HomeController">
-    <div id="container-fluid" style="max-width: 100%"> <!--center-wrapper-->
+<section data-ng-controller="HomeController" ng-init="initFunc();">
+    <div id="container-fluid" class="row" style="max-width: 100%; margin-left: 0"> <!--center-wrapper-->
         <div class="dhe-example-section" id="ex-1-4">
             <div class="dhe-example-section-header">
-                <h3 class="dhe-h3 dhe-example-title">Continuous Integration</h3>
+                <!--<h3 class="dhe-h3 dhe-example-title" style="margin-top: 40px">Continuous Integration</h3>-->
                 <div class="dhe-example-description"></div>
             </div>
-            <!--<div class="column left" id="sortable-container1" data-ng-model="columns" ng-repeat="column in columns">-->
-                <!--<div data-as-sortable="dragControlListeners" class="sortable-list">-->
-                    <!--<span>{{column.name}}</span>-->
-                    <!--<div class="caption">-->
-                        <!--&lt;!&ndash;<div class="sortable-item" ng-repeat="item in list1" ng-show="item.title" data-drag="{{item.drag}}" data-jqyoui-options="{revert: 'invalid'}" ng-model="list1" jqyoui-draggable="{index: {{$index}},animate:true}" data-as-sortable-item="">&ndash;&gt;-->
-                        <!--<div class="sortable-item" ng-repeat="item in column.cards.list1" data-ng-show="item.title" data-as-sortable-item="">-->
-                            <!--<div data-as-sortable-item-handle="">{{item.title}}</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-            <div class="column left first" style="width:{{columnWidth}}%; display: inline-block ;height: 100%" ng-repeat="column in columns" data-columnindex="{{$index}}" id="column{{$index}}">
-                <!--<div class="column left">-->
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <div class="columnHeader">
-                            <a title="Column settings" ng-model="column"><i class="glyphicon glyphicon-wrench"></i></a>
-                            <a title="Add card to column" class="addCard pull-right" ng-click="addCard(column)"><i class="glyphicon glyphicon-plus"></i></a>
-                            <span>{{column.name}}</span>
-                        </div>
-                        <div class="panel-body">
-                            <div class="well">
-                                <ul data-as-sortable="dragControlListeners" ng-model="column.cards" class="sortable-list">
-                                    <li class="sortable-item" ng-repeat="card in column.cards" data-ng-show="card.title" data-as-sortable-item="">
-                                        <div data-as-sortable-item-handle="">
-                                            <div class="caption">
-                                                <h4>{{card.title}}</h4>
-                                                <p>Nullam Condimentum Nibh Etiam Sem</p>
-                                                <a class="btn btn-mini" href="#">» Read More</a>
-                                            </div>
-                                        </div>
-                                        <!--<a class="deleteCard pull-right"><i class="glyphicon glyphicon-remove"></i></a>-->
-                                    </li>
-                                </ul>
+
+            <div class="panel panel-default column" style="width:{{columnWidth}}%; max-height: 80%;" ng-repeat="column in columns" data-columnindex="{{$index}}" id="column{{$index}}">
+                <div class="panel-heading columnHeader">
+                    <a title="Column settings" ng-model="column"><i class="glyphicon glyphicon-wrench"></i></a>
+                    <a title="Add card to column" class="addCard pull-right" ng-click="addCard(column)"><i class="glyphicon glyphicon-plus"></i></a>
+                    <span>{{column.name}}</span>
+                </div>
+                <div class="panel-body" style="max-height: 645px">
+                    <article data-as-sortable="dragControlListeners" ng-model="column.cards" class="sortable-list">
+                        <div class="sortable-item" ng-repeat="card in column.cards" data-ng-show="card.title" data-as-sortable-item="">
+                            <div data-as-sortable-item-handle="">
+                                <div class="shape" ng-hide="column.name === 'Backlog'">
+                                    <div class="shape-text">
+                                        {{release}}
+                                    </div>
+                                </div>
+                                <div class="caption">
+                                    <h4>{{card.title}}</h4>
+                                    <p>Nullam Condimentum Nibh Etiam Sem</p>
+                                    <a class="btn btn-mini" href="#">» Read More</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
+                    </article>
                 </div>
-                <!--</div>-->
+                <div class="panel-footer" ng-show="column.cards.length > 0"><a href="#"><span class="badge" ng-bind="column.cards.length"></span></a></div>
             </div>
-
-            <!--<div class="column left" id="sortable-container2">-->
-                <!--&lt;!&ndash;<div data-as-sortable="sortableOptions" class="sortable-list" data-drop="true" data-ng-model="list2" data-jqyoui-options="{accept:'.sortable-item:not([ng-model=list2])'}"  jqyoui-droppable="{multiple:true}">&ndash;&gt;-->
-                <!--<div data-as-sortable="dragControlListeners" class="sortable-list" data-ng-model="list2">-->
-                    <!--<div class="caption">-->
-                        <!--&lt;!&ndash;<div class="sortable-item" ng-repeat="item in list2" ng-show="item.title" data-drag="{{item.drag}}" data-jqyoui-options="{revert: 'invalid'}" ng-model="list2" jqyoui-draggable="{index: {{$index}},animate:true}" data-as-sortable-item="">&ndash;&gt;-->
-                        <!--<div class="sortable-item" ng-repeat="item in list2" data-ng-show="item.title" data-as-sortable-item="">-->
-                            <!--<div data-as-sortable-item-handle="">{{item.title}}</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
         </div>
     </div>
 </section>
