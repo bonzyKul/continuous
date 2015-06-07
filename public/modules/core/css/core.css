@@ -148,11 +148,12 @@
 
 .shape-text {
     color: #fff;
+    font-family: verdana;
     font-size: 12px;
-    font-weight: bold;
+    font-weight: 300;
     position: relative;
     right: -40px;
-    top: 5px;
+    top: 3px;
     white-space: nowrap;
     -ms-transform: rotate(30deg);
     -o-transform: rotate(360deg);
@@ -184,6 +185,24 @@
     padding: 0;
     text-align: center;
     overflow: hidden;
+    font-family: verdana;
+    font-weight: 100;
+}
+
+.sortable-item .caption > h4 {
+    font-family: verdana;
+    font-size: 18px;
+    font-weight: 200;
+}
+
+.sortable-item .caption > p, a {
+    font-family: verdana;
+    font-weight: 100;
+    font-size: 12px;
+}
+
+.sortable-item .removeCard {
+    cursor: default;
 }
 
 /* Containment area */
@@ -271,7 +290,10 @@
     display: block;
     border-style: solid;
     text-decoration: none;
-    color: #999999;
+    color: white;
+    font-family: "Georgia";
+    font-size: 16px;
+    font-weight: 200;
 }
 
 .sidebar-nav li a:hover {
