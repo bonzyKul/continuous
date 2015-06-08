@@ -56,7 +56,7 @@
                                         <div class="sortable-item" ng-repeat="card in column.cards" data-ng-show="card.title" data-as-sortable-item="">
                                             <div data-as-sortable-item-handle="">
                                                 <a class = "removeCard" title="Column settings" ng-model="column" ng-click="removeCard(column, card)" ng-hide="column.name != 'Backlog'"><i class="glyphicon glyphicon-remove"></i></a>
-                                                <div class="shape" ng-hide="column.name === 'Backlog'">
+                                                <div class="shape" ng-hide="column.name === 'Backlog'" style="border-color: rgba(255,255,255,0) {{card.ragStatus}} rgba(255,255,255,0) rgba(255,255,255,0);">
                                                     <div class="shape-text">
                                                         {{card.release}}
                                                     </div>

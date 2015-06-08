@@ -28,14 +28,13 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
             });
         };
 
-
         $scope.columns = [
-            {'name': 'Backlog',cards: [{'title': 'item1', 'drag':true, 'release':""},
-                {'title': 'item2', 'drag':true, 'release':""},
-                {'title': 'item3', 'drag':true, 'release':""},
-                {'title': 'item4', 'drag':true, 'release':""},
-                {'title': 'item5', 'drag':true, 'release':""},
-                {'title': 'item6', 'drag':true, 'release':""}], 'hideCol':false},
+            {'name': 'Backlog',cards: [{'title': 'item1', 'drag':true, 'release':"",'ragStatus':'#5cb85c'},
+                {'title': 'item2', 'drag':true, 'release':"",'ragStatus':'#5cb85c'},
+                {'title': 'item3', 'drag':true, 'release':"",'ragStatus':'#ffeb13'},
+                {'title': 'item4', 'drag':true, 'release':"",'ragStatus':'#5cb85c'},
+                {'title': 'item5', 'drag':true, 'release':"",'ragStatus':'#ff0000'},
+                {'title': 'item6', 'drag':true, 'release':"",'ragStatus':'#5cb85c'}], 'hideCol':false},
             {'name': 'Discovery',cards: [], 'hideCol':false},
             {'name': 'Design',cards: [], 'hideCol':false},
             {'name': 'Build',cards: [], 'hideCol':false},
