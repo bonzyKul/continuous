@@ -1,0 +1,6 @@
+<span ng-show="showHexCode">&nbsp;#{{model}}</span>
+<div class="pull-left" ng-repeat="option in options" ng-model="option">
+    <label class="colorBox" for="{{prefix}}{{option}}" ng-class="{selected: option == model}" style="background-color: #{{option}};" ng-click="selectColor(option)"></label>
+    <br ng-show="showRadios"/>
+    <input type="radio" id="{{prefix}}{{option}}" name="{{prefix}}" value="{{option}}" ng-show="showRadios" ng-model="model"/>
+</div>

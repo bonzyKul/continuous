@@ -14,5 +14,13 @@ angular.module('core').controller('HeaderController', ['$scope', 'Authentication
 		$scope.$on('$stateChangeSuccess', function() {
 			$scope.isCollapsed = false;
 		});
+
+        $scope.shouldRedirectToHome = function() {
+            if($scope.authentication.user) {
+                $location.path('/#!/');
+            } else {
+                $location.path('/#!/signin');
+            }
+        };
 	}
 ]);

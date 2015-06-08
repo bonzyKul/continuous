@@ -185,18 +185,24 @@
     padding: 0;
     text-align: center;
     overflow: hidden;
-    font-family: verdana;
+    font-family: 'verdana';
     font-weight: 100;
 }
 
-.sortable-item .caption > h4 {
-    font-family: verdana;
+.sortable-item .caption  h4 {
+    font-family: 'verdana';
     font-size: 18px;
     font-weight: 200;
 }
 
-.sortable-item .caption > p, a {
-    font-family: verdana;
+.sortable-item .caption  p {
+    font-family: 'verdana';
+    font-weight: 100;
+    font-size: 12px;
+}
+
+.sortable-item .caption  a {
+    font-family: 'verdana';
     font-weight: 100;
     font-size: 12px;
 }
@@ -291,9 +297,8 @@
     border-style: solid;
     text-decoration: none;
     color: white;
-    font-family: "Georgia";
+    font-family: 'Georgia';
     font-size: 16px;
-    font-weight: 200;
 }
 
 .sidebar-nav li a:hover {

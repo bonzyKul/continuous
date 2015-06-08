@@ -1,4 +1,4 @@
-<section data-ng-controller="HomeController" ng-init="initFunc();">
+<section data-ng-controller="HomeController">
     <div id="wrapper">
 
         <!-- Sidebar -->
@@ -64,7 +64,7 @@
                                                 <div class="caption">
                                                     <h4>{{card.title}}</h4>
                                                     <p>Nullam Condimentum Nibh Etiam dkjshsfhdshsdgsgjksgksjdgjsdgsdjgsdkjgsdkjgjsgv\nfjkdfsf</p>
-                                                    <a class="btn btn-mini" href="#">» Read More</a>
+                                                    <a class="btn btn-mini" href="#" ng-click="updateCard(column, card)">Edit</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -79,16 +79,6 @@
         </div>
     </div>
     <!-- /#page-content-wrapper -->
-
-    <!--</div>-->
-    <!--<div id="page-content-wrapper">-->
-        <!--<div class="page-content inset">-->
-            <!--<div id="container-fluid" class="row main"> &lt;!&ndash;center-wrapper&ndash;&gt;-->
-
-
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
 </section>
 <script>
     $("#menu-toggle").click(function(e) {

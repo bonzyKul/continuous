@@ -1,0 +1,36 @@
+<section  data-ng-controller="HomeController">
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="close()">&times;</button>
+        <h4 class="modal-title" ng-model="column.name">Add New Card in '{{column.name}}'</h4>
+    </div>
+    <div class="modal-body">
+        <form class="noMargin" name="newCardForm">
+            <div class="form-group">
+                <label class="control-label" for="newCardTitle">Card title</label>
+
+                <div>
+                    <input type="text" id="newCardTitle" placeholder="Title on a card" ng-model="event.title" required
+                           focus-me class="cardInputs form-control"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="newCardDetails">More details
+                    <small>(optional)</small>
+                </label>
+
+                <div>
+                    <textarea id="newCardDetails" ng-model="event.details" class="cardInputs form-control" rows="7">
+                    </textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Rag Status</label>
+                <color-selector options="colorOptions" ng-model="event.cardColor" prefix="newCardColor" class="colorSelector" show-hex-code="true"></color-selector>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger" ng-click="cancel()">Cancel</button>
+        <button type="submit" class="btn btn-primary" ng-click="ok()">Update</button>
+    </div>
+</section>
