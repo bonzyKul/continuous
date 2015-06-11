@@ -1,36 +1,73 @@
-<section  data-ng-controller="HomeController">
-    <div class="modal-header">
-        <button type="button" class="close" ng-click="close()">&times;</button>
-        <h4 class="modal-title" ng-model="column.name">Add New Card in '{{column.name}}'</h4>
-    </div>
-    <div class="modal-body">
-        <form class="noMargin" name="newCardForm">
-            <div class="form-group">
-                <label class="control-label" for="newCardTitle">Card title</label>
+<div xmlns="http://www.w3.org/1999/html">
+    <form class="noMargin" name="newCardForm">
+        <div class="modal-header">
+            <button type="button" class="close" ng-click="close()">&times;</button>
+            <h4 class="modal-title">Update {{card.title}}</h4>
+        </div>
+        <div class="modal-body">
+                <div class="form-group">
+                    <label class="control-label" for="newCardDetails">More details
+                        <small>(optional)</small>
+                    </label>
 
-                <div>
-                    <input type="text" id="newCardTitle" placeholder="Title on a card" ng-model="event.title" required
-                           focus-me class="cardInputs form-control"/>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label" for="newCardDetails">More details
-                    <small>(optional)</small>
-                </label>
-
-                <div>
-                    <textarea id="newCardDetails" ng-model="event.details" class="cardInputs form-control" rows="7">
+                    <div>
+                    <textarea id="newCardDetails" ng-model="card.details" class="cardInputs form-control" rows="3">
                     </textarea>
+                    </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <label>Rag Status</label>
-                <color-selector options="colorOptions" ng-model="event.cardColor" prefix="newCardColor" class="colorSelector" show-hex-code="true"></color-selector>
-            </div>
-        </form>
-    </div>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-danger" ng-click="cancel()">Cancel</button>
-        <button type="submit" class="btn btn-primary" ng-click="ok()">Update</button>
-    </div>
-</section>
+                <div class="form-group">
+                    <label>Rag Status</label><br/>
+                        <div class="pull-left" ng-repeat="option in colorOptions">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" id="{{option}}" name="{{option}}" value="{{option}}" ng-model="card.cardColor">
+                                    <label class="colorBox" for="{{option}}" style="background-color: #{{option}};width: 20px;height: 20px; display: block;margin-right: 10px"></label>
+                                    </input>
+                                </label>
+                            </div><!-- /input-group -->
+                        </div>
+                </div><br/><br/>
+                <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <b><label class="control-label" for="solutionArchitect">Solution Architect</label></b>
+                                <div>
+                                    <input type="text" id="solutionArchitect" placeholder="Solution Architect" ng-model="card.architect" required
+                                           class="cardInputs form-control"/>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <b><label class="control-label" for="analystName">Analyst</label></b>
+                                <div>
+                                    <input type="text" id="analyst" placeholder="Analyst" ng-model="card.analyst" required
+                                           class="cardInputs form-control"/>
+                                </div><br/>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <b><label class="control-label" for="designerName">Designer</label></b>
+                                <div>
+                                    <input type="text" id="designer" placeholder="Designer" ng-model="card.designer" required
+                                           class="cardInputs form-control"/>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <b><label class="control-label" for="buildTeam">Build Cell</label></b>
+                                <div>
+                                    <input type="text" id="buildCell" placeholder="Build Cell" ng-model="card.buildCell" required
+                                           class="cardInputs form-control"/>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            <br/>
+
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-danger" ng-click="cancel()">Cancel</button>
+            <button type="submit" class="btn btn-primary" ng-click="ok()">Update</button>
+        </div>
+    </form>
+</div>
