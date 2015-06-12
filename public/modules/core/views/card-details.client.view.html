@@ -11,23 +11,32 @@
                     </label>
 
                     <div>
-                    <textarea id="newCardDetails" ng-model="card.details" class="cardInputs form-control" rows="3">
+                    <textarea id="newCardDetails" ng-model="card.Details" class="cardInputs form-control" rows="3">
                     </textarea>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label>Rag Status</label><br/>
+                <div class="form-group" ng-hide="card.column.name === 'Backlog'">
+                    <div class="col-md-6">
+                        <b><label class="control-label" for="Release">Release</label></b>
+                        <div>
+                            <input type="text" id="Release" placeholder="Release" ng-model="card.release" required
+                                   class="cardInputs form-control"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Rag Status</label><br/>
                         <div class="pull-left" ng-repeat="option in colorOptions">
                             <div class="radio">
                                 <label>
-                                    <input type="radio" id="{{option}}" name="{{option}}" value="{{option}}" ng-model="card.cardColor">
+                                    <input type="radio" id="{{option}}" name="{{option}}" ng-value="card.cardColor" ng-model="card.cardColor">
                                     <label class="colorBox" for="{{option}}" style="background-color: #{{option}};width: 20px;height: 20px; display: block;margin-right: 10px"></label>
                                     </input>
                                 </label>
                             </div><!-- /input-group -->
                         </div>
+                    </div>
                 </div><br/><br/>
-                <div class="form-group">
+                <div class="form-group" ng-hide="card.column.name === 'Backlog'">
                         <div class="row">
                             <div class="col-md-6">
                                 <b><label class="control-label" for="solutionArchitect">Solution Architect</label></b>

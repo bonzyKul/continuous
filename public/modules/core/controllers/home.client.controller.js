@@ -26,7 +26,12 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
                             title: card.title,
                             Details: card.details,
                             release: card.release,
-                            cardColor: card.ragStatus
+                            cardColor: card.ragStatus,
+                            column: column,
+                            architect: card.architect,
+                            analyst: card.Analyst,
+                            designer: card.designer,
+                            buildCell: card.buildCell
                         });
                     }
                 }
@@ -39,7 +44,22 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
                    if(col.name === column.name) {
                        angular.forEach(col.cards, function(cd) {
                           if (cd.title === card.title) {
-                              cd.ragStatus = '#' + result.cardColor;
+                              if (col.name === 'Backlog') {
+                                  cd.details = result.Details;
+                              } else {
+                                  cd.details = result.Details;
+                                  if (result.cardColor) {
+                                      cd.ragStatus = '#' + result.cardColor;
+                                  } else {
+                                      cd.ragStatus = '#5CB85C';
+                                  }
+                                  cd.release = result.release;
+                                  cd.architect = result.architect;
+                                  cd.designer = result.designer;
+                                  cd.Analyst = result.analyst;
+                                  cd.buildCell = result.buildCell
+                              }
+
                           }
                        });
                    }
@@ -62,6 +82,8 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
         var modalController = function($scope, $modalInstance, items) {
 
             $scope.colorOptions = ['5CB85C','FFEB13','FF0000'];
+
+            console.log(items.column.name);
 
             $scope.card = items;
 
@@ -147,23 +169,20 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
 
         $scope.dragControlListeners = {
             itemMoved: function (event) {
-                //console.log(event.source.itemScope.modelValue.title);
-                //console.log(event.source.index);
-                //console.log(event.dest.sortableScope.$parent.column.name);
                 var releaseVar = "";
                 var columnName = event.dest.sortableScope.$parent.column.name;
                 if (columnName === 'Backlog') {
                     releaseVar = "";
                 } else {
                     releaseVar = prompt('Enter Release Info !');
-                    if (releaseVar === "") {
-                      releaseVar = "Rel";
-                    }
                 }
                 angular.forEach($scope.columns, function(col) {
                     if (col.name === columnName) {
                         angular.forEach(col.cards, function(card) {
                             if (card.title === event.source.itemScope.modelValue.title) {
+                                if (releaseVar === " " || releaseVar.length === 0) {
+                                    releaseVar = "Rel";
+                                }
                                 card.release = releaseVar;
                             }
                         });

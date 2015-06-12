@@ -9,9 +9,9 @@
 
                     </a>
                 </li>
-                <li>
-                    <a href="#" ng-click="hiddenCol(columns[0])">Backlog</a>
-                </li>
+                <!--<li>-->
+                    <!--<a href="#" ng-click="hiddenCol(columns[0])">Backlog</a>-->
+                <!--</li>-->
                 <li>
                     <a href="#" ng-click="hiddenCol(columns[1])">Discovery</a>
                 </li>
@@ -23,9 +23,6 @@
                 </li>
                 <li>
                     <a href="#" ng-click="hiddenCol(columns[4])">Pilot</a>
-                </li>
-                <li>
-                    <a href="#">Reports</a>
                 </li>
             </ul>
         </div>
@@ -47,8 +44,8 @@
 
                             <div class="panel panel-default column" style="width:{{columnWidth}}%; max-height: 80%;" ng-repeat="column in columns" data-columnindex="{{$index}}" id="column{{$index}}" data-ng-hide="column.hideCol">
                                 <div class="panel-heading columnHeader">
-                                    <a title="Column settings" ng-model="column" ng-click="hiddenCol(column)"><i class="glyphicon glyphicon-remove"></i></a>
-                                    <a title="Add card to column" class="addCard pull-right" ng-click="addCard(column)"><i class="glyphicon glyphicon-plus"></i></a>
+                                    <a title="Column settings" ng-model="column" ng-click="hiddenCol(column)" ng-hide="column.name === 'Backlog'"><i class="glyphicon glyphicon-remove"></i></a>
+                                    <a title="Add card to column" class="addCard pull-right" ng-click="addCard(column)" ng-show="column.name === 'Backlog'"><i class="glyphicon glyphicon-plus"></i></a>
                                     <span>{{column.name}}</span>
                                 </div>
                                 <div class="panel-body" style="max-height: 645px">
@@ -63,7 +60,7 @@
                                                 </div>
                                                 <div class="caption">
                                                     <h4>{{card.title}}</h4>
-                                                    <p>Nullam Condimentum Nibh Etiam dkjshsfhdshsdgsgjksgksjdgjsdgsdjgsdkjgsdkjgjsgv\nfjkdfsf</p>
+                                                    <p style="margin-left: 2px; margin-right: 2px;">{{card.details}}</p>
                                                     <a class="btn btn-mini" href="#" ng-click="updateCard(column, card)">Edit</a>
                                                 </div>
                                             </div>
