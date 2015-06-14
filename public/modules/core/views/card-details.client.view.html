@@ -28,7 +28,7 @@
                         <div class="pull-left" ng-repeat="option in colorOptions">
                             <div class="radio">
                                 <label>
-                                    <input type="radio" id="{{option}}" name="{{option}}" ng-value="card.cardColor" ng-model="card.cardColor">
+                                    <input type="radio" id="{{option}}" name="{{$index}}" value="{{option}}" ng-model="card.cardColor" ng-checked="ngChecked()">
                                     <label class="colorBox" for="{{option}}" style="background-color: #{{option}};width: 20px;height: 20px; display: block;margin-right: 10px"></label>
                                     </input>
                                 </label>
