@@ -61,6 +61,10 @@
                                                 <div class="caption">
                                                     <h4>{{card.title}}</h4>
                                                     <p style="margin-left: 2px; margin-right: 2px;">{{card.details}}</p>
+                                                    <p style="margin-left: 2px; margin-right: 2px;">{{card.architect}}</p>
+                                                    <p style="margin-left: 2px; margin-right: 2px;">{{card.Analyst}}</p>
+                                                    <p style="margin-left: 2px; margin-right: 2px;">{{card.designer}}</p>
+                                                    <p style="margin-left: 2px; margin-right: 2px;" ng-show="column.name === 'Build'">{{card.buildCell}}</p>
                                                     <a class="btn btn-mini" href="#" ng-click="updateCard(column, card)">Edit</a>
                                                 </div>
                                             </div>
