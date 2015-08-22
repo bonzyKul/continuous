@@ -105,12 +105,12 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
 
 
         $scope.columns = [
-            {'name': 'Backlog',cards: [{'title': 'item1', 'drag':true, 'release':"",'ragStatus':'#5cb85c', 'details':"",'architect':"", 'Analyst':"",'designer':"",'buildCell':""},
-                {'title': 'item2', 'drag':true, 'release':"",'ragStatus':'#5cb85c', 'details':"",'architect':"", 'Analyst':"",'designer':"",'buildCell':""},
-                {'title': 'item3', 'drag':true, 'release':"",'ragStatus':'#ffeb13', 'details':"",'architect':"", 'Analyst':"",'designer':"",'buildCell':""},
-                {'title': 'item4', 'drag':true, 'release':"",'ragStatus':'#5cb85c', 'details':"",'architect':"", 'Analyst':"",'designer':"",'buildCell':""},
-                {'title': 'item5', 'drag':true, 'release':"",'ragStatus':'#ff0000', 'details':"",'architect':"", 'Analyst':"",'designer':"",'buildCell':""},
-                {'title': 'item6', 'drag':true, 'release':"",'ragStatus':'#5cb85c', 'details':"",'architect':"", 'Analyst':"",'designer':"",'buildCell':""}], 'hideCol':false},
+            {'name': 'Backlog',cards: [{'id': '1', 'title': 'item1', 'drag':true, 'release':"",'ragStatus':'#5cb85c', 'details':"",'architect':"", 'Analyst':"",'designer':"",'buildCell':""},
+                {'id': '2','title': 'item2', 'drag':true, 'release':"",'ragStatus':'#5cb85c', 'details':"",'architect':"", 'Analyst':"",'designer':"",'buildCell':""},
+                {'id': '3','title': 'item3', 'drag':true, 'release':"",'ragStatus':'#ffeb13', 'details':"",'architect':"", 'Analyst':"",'designer':"",'buildCell':""},
+                {'id': '4','title': 'item4', 'drag':true, 'release':"",'ragStatus':'#5cb85c', 'details':"",'architect':"", 'Analyst':"",'designer':"",'buildCell':""},
+                {'id': '5','title': 'item5', 'drag':true, 'release':"",'ragStatus':'#ff0000', 'details':"",'architect':"", 'Analyst':"",'designer':"",'buildCell':""},
+                {'id': '6','title': 'item6', 'drag':true, 'release':"",'ragStatus':'#5cb85c', 'details':"",'architect':"", 'Analyst':"",'designer':"",'buildCell':""}], 'hideCol':false},
             {'name': 'Discovery',cards: [], 'hideCol':false},
             {'name': 'Design',cards: [], 'hideCol':false},
             {'name': 'Build',cards: [], 'hideCol':false},
@@ -174,7 +174,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
                 if (columnName === 'Backlog') {
                     releaseVar = "";
                 } else {
-                    releaseVar = prompt('Enter Release Info !');
+                    //releaseVar = prompt('Enter Release Info !');
                 }
                 angular.forEach($scope.columns, function(col) {
                     if (col.name === columnName) {

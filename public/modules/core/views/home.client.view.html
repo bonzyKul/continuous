@@ -53,19 +53,27 @@
                                         <div class="sortable-item" ng-repeat="card in column.cards" data-ng-show="card.title" data-as-sortable-item="">
                                             <div data-as-sortable-item-handle="">
                                                 <a class = "removeCard" title="Column settings" ng-model="column" ng-click="removeCard(column, card)" ng-hide="column.name != 'Backlog'"><i class="glyphicon glyphicon-remove"></i></a>
-                                                <div class="shape" ng-hide="column.name === 'Backlog'" style="border-color: rgba(255,255,255,0) {{card.ragStatus}} rgba(255,255,255,0) rgba(255,255,255,0);">
+                                                <div class="shape" style="border-color: rgba(255,255,255,0) {{card.ragStatus}} rgba(255,255,255,0) rgba(255,255,255,0);">
                                                     <div class="shape-text">
                                                         {{card.release}}
                                                     </div>
                                                 </div>
                                                 <div class="caption">
-                                                    <h4>{{card.title}}</h4>
-                                                    <p style="margin-left: 2px; margin-right: 2px;">{{card.details}}</p>
-                                                    <p style="margin-left: 2px; margin-right: 2px;">{{card.architect}}</p>
-                                                    <p style="margin-left: 2px; margin-right: 2px;">{{card.Analyst}}</p>
-                                                    <p style="margin-left: 2px; margin-right: 2px;">{{card.designer}}</p>
-                                                    <p style="margin-left: 2px; margin-right: 2px;" ng-show="column.name === 'Build'">{{card.buildCell}}</p>
-                                                    <a class="btn btn-mini" href="#" ng-click="updateCard(column, card)">Edit</a>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <h6 style="float: right;margin-left: 20px; text-underline: single;text-underline-mode: line;">#{{card.id}}</h6>
+                                                        </div>
+                                                    </div>
+                                                    <br/>
+                                                    <div class="row">
+                                                        <div class="col-md-10">
+                                                            <h5>{{card.title}}</h5><br/>
+                                                            <p style="float: left;font-size: 12px">{{card.details}}</p>
+                                                        </div>
+                                                        <div class="col-md-offset-10 col-md-2">
+                                                            <a class="btn btn-mini" href="#" ng-click="updateCard(column, card)">Edit</a>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>

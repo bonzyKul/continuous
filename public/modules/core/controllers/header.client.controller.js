@@ -17,7 +17,7 @@ angular.module('core').controller('HeaderController', ['$scope', 'Authentication
 
         $scope.shouldRedirectToHome = function() {
             if($scope.authentication.user) {
-                $location.path('/#!/');
+                $location.path('/#!/project-home');
             } else {
                 $location.path('/#!/signin');
             }
