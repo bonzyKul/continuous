@@ -1,5 +1,5 @@
 <!--<section>-->
-    <div class="container">
+    <div class="container" ng-controller="ProjectsController">
         <div class="page-header">
             <button type="button" class="btn btn-primary" style="float: right; margin-top: 0">Add Project</button>
             <h1 id="timeline">Timeline</h1>
@@ -89,7 +89,7 @@
             </li>
             <li class="timeline-inverted">
                 <div class="timeline-badge success"><i class="glyphicon glyphicon-thumbs-up"></i></div>
-                <div class="timeline-panel">
+                <div class="timeline-panel" data-ng-click="gotoProject()">
                     <div class="timeline-heading">
                         <h4 class="timeline-title">Mussum ipsum cacilds</h4>
                     </div>

@@ -62,5 +62,10 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 				projectId: $stateParams.projectId
 			});
 		};
+
+        $scope.gotoProject = function() {
+            $location.path('/');
+        }
+
 	}
 ]);

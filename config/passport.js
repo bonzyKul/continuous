@@ -1,4 +1,4 @@
-1'use strict';
+'use strict';
 
 /**
  * Module dependencies.

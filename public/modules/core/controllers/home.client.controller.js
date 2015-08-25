@@ -121,7 +121,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
         $scope.hiddenCol = function(column) {
             angular.forEach($scope.columns, function(col) {
                 if(col.name === column.name) {
-                    if(column.hideCol == true) {
+                    if(column.hideCol === true) {
                         column.hideCol = false;
                     } else {
                         column.hideCol = true;
@@ -169,10 +169,10 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
 
         $scope.dragControlListeners = {
             itemMoved: function (event) {
-                var releaseVar = "";
+                var releaseVar = '';
                 var columnName = event.dest.sortableScope.$parent.column.name;
                 if (columnName === 'Backlog') {
-                    releaseVar = "";
+                    releaseVar = '';
                 } else {
                     //releaseVar = prompt('Enter Release Info !');
                 }
@@ -180,8 +180,8 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
                     if (col.name === columnName) {
                         angular.forEach(col.cards, function(card) {
                             if (card.title === event.source.itemScope.modelValue.title) {
-                                if (releaseVar === " " || releaseVar.length === 0) {
-                                    releaseVar = "Rel";
+                                if (releaseVar === ' ' || releaseVar.length === 0) {
+                                    releaseVar = 'Rel';
                                 }
                                 card.release = releaseVar;
                             }
